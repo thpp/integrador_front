@@ -1,0 +1,19 @@
+.container {
+  height: 100vh;
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.content {
+  padding: 16px;
+}
+
+.toolbar {
+  display: flex;
+}
+
+.align-right {
+  margin-right: auto;
+}

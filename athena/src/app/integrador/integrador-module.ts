@@ -1,14 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { IntegradorRoutingModule } from './integrador-routing-module';
 
-
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    IntegradorRoutingModule
-  ]
+  imports: [CommonModule, IntegradorRoutingModule],
 })
-export class IntegradorModule { }
+export class IntegradorModule {}

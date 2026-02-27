@@ -6,7 +6,7 @@ import { ProjetoList } from './pages/projetos/projeto-list/projeto-list';
 import { ProjetoForm } from './pages/projetos/projeto-form/projeto-form';
 
 @NgModule({
-  declarations: [ProjetoForm],
-  imports: [CommonModule, IntegradorRoutingModule, ProjetoList],
+  declarations: [],
+  imports: [CommonModule, IntegradorRoutingModule, ProjetoList, ProjetoForm],
 })
 export class IntegradorModule {}

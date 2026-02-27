@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="header">
+    <button mat-icon-button routerLink="/integrador/projetos">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1>Cadastro de Projeto</h1>
+  </div>
+  <form [formGroup]="projetoForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Titulo do Projeto</mat-label>
+      <input matInput formControlName="tituloDoProjeto" />
+      <mat-error *ngIf="projetoForm.get('tituloDoProjeto')?.hasError('required')">
+        Título é obrigatório
+      </mat-error>
+      <mat-error *ngIf="projetoForm.get('tituloDoProjeto')?.hasError('minlength')">
+        Título deve ter no mínimo 5 caracteres
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Curso</mat-label>
+      <mat-select formControlName="curso">
+        <mat-option *ngFor="let curso of cursos" [value]="curso.id">
+          {{ curso.nome }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="projetoForm.get('curso')?.hasError('required')">
+        Curso é obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Termo</mat-label>
+      <input matInput type="number" formControlName="termo" />
+      <mat-error *ngIf="projetoForm.get('termo')?.hasError('required')">
+        Termo é obrigatório
+      </mat-error>
+      <mat-error *ngIf="projetoForm.get('termo')?.hasError('min')">
+        Termo deve ser no mínimo 1
+      </mat-error>
+      <mat-error *ngIf="projetoForm.get('termo')?.hasError('max')">
+        Termo deve ser no máximo 10
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Tutor do Projeto</mat-label>
+      <mat-select formControlName="tutor">
+        <mat-option *ngFor="let tutor of tutores" [value]="tutor.id">
+          {{ tutor.nome }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="projetoForm.get('tutor')?.hasError('required')">
+        Tutor é obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="categoria">
+        <mat-option *ngFor="let categoria of categorias" [value]="categoria.id">
+          {{ categoria.categoria }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="projetoForm.get('categoria')?.hasError('required')">
+        Categoria é obrigatória
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Qtd. De Alunos</mat-label>
+      <input type="number" matInput formControlName="qtdDeAlunos" />
+      <mat-error *ngIf="projetoForm.get('qtdDeAlunos')?.hasError('required')">
+        Quantidade de alunos é obrigatória
+      </mat-error>
+      <mat-error *ngIf="projetoForm.get('qtdDeAlunos')?.hasError('min')">
+        Deve haver pelo menos 1 aluno
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cursos Envolvidos (Multicurso)</mat-label>
+      <mat-select multiple formControlName="cursosEnvolvidos">
+        <mat-option *ngFor="let curso of cursos" [value]="curso.id">
+          {{ curso.nome }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="projetoForm.get('cursosEnvolvidos')?.hasError('required')">
+        Selecione ao menos um curso
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Empresa envolvida (nome e cidade)</mat-label>
+      <textarea matInput formControlName="envolveEmpresa"></textarea>
+      <mat-error *ngIf="projetoForm.get('envolveEmpresa')?.hasError('required')">
+        Este campo é obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <div class="form-actions">
+      <button mat-stroked-button type="button" (click)="onCancel()">Cancelar</button>
+      <button mat-flat-button color="primary" type="submit" [disabled]="projetoForm.invalid">
+        Enviar
+      </button>
+    </div>
+  </form>
+</div>

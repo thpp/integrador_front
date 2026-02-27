@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { RouterLink } from '@angular/router';
 
 export interface IProjeto {
   id: number;
@@ -170,6 +171,7 @@ const PROJETOS: IProjeto[] = [
     MatPaginatorModule,
     MatButtonModule,
     A11yModule,
+    RouterLink,
   ],
   templateUrl: './projeto-list.html',
   styleUrl: './projeto-list.css',

@@ -1,20 +1,17 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
-
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { App } from './app';
+import { AppRoutingModule } from './app-routing-module';
 
 @NgModule({
-  declarations: [
-    App
-  ],
+  declarations: [App],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,11 +20,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatListModule,
     MatButtonModule,
-    LayoutModule
+    LayoutModule,
   ],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-  ],
-  bootstrap: [App]
+  providers: [provideBrowserGlobalErrorListeners()],
+  bootstrap: [App],
 })
-export class AppModule { }
+export class AppModule {}

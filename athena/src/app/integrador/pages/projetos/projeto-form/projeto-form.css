@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  padding: 24px;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #3f51b5;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
+.form-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+mat-form-field:first-of-type,
+mat-form-field:nth-of-type(7),
+mat-form-field:nth-of-type(8) {
+  grid-column: span 2;
+}
+
+.form-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  mat-form-field:first-of-type,
+  mat-form-field:nth-of-type(7),
+  mat-form-field:nth-of-type(8) {
+    grid-column: span 1;
+  }
+
+  .form-actions {
+    grid-column: span 1;
+    flex-direction: column-reverse;
+  }
+}

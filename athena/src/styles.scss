@@ -1,0 +1,25 @@
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #F8FAFC;
+}
+
+.nav-item.active-link {
+  background: linear-gradient(90deg, #4478DB 0%, #3B6FD1 100%);
+}
+
+.nav-item.active-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 4px;
+  background: #F59E0B;
+}

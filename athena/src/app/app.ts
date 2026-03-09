@@ -6,7 +6,7 @@ import { map, Observable, shareReplay } from 'rxjs';
   selector: 'app-root',
   templateUrl: './app.html',
   standalone: false,
-  styleUrl: './app.css',
+  styleUrl: './app.scss',
 })
 export class App implements OnInit {
   protected readonly title = signal('athena');
